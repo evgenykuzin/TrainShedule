@@ -87,4 +87,5 @@ private String departureStation;
         }
         return "";
     }
+
 }

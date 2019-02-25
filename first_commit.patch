@@ -1,0 +1,548 @@
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(date 1551087425100)
++++ .idea/encodings.xml	(date 1551087425100)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
++</project>
+\ No newline at end of file
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(date 1551004277954)
++++ pom.xml	(date 1551004277954)
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <groupId>jekajops</groupId>
++    <artifactId>TrainShedule</artifactId>
++    <version>1.0-SNAPSHOT</version>
++    <dependencies>
++        <dependency>
++            <groupId>junit</groupId>
++            <artifactId>junit</artifactId>
++            <version>4.12</version>
++            <scope>test</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.junit.jupiter</groupId>
++            <artifactId>junit-jupiter-api</artifactId>
++            <version>5.0.3</version>
++            <scope>test</scope>
++        </dependency>
++    </dependencies>
++
++
++</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(date 1551087425114)
++++ .idea/modules.xml	(date 1551087425114)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/TrainShedule1.iml" filepath="$PROJECT_DIR$/.idea/TrainShedule1.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1551087652031)
++++ .idea/compiler.xml	(date 1551087652031)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <annotationProcessing>
++      <profile name="Maven default annotation processors profile" enabled="true">
++        <sourceOutputDir name="target/generated-sources/annotations" />
++        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
++        <outputRelativeToContentRoot value="true" />
++        <module name="TrainShedule1" />
++      </profile>
++    </annotationProcessing>
++    <bytecodeTargetLevel>
++      <module name="TrainShedule1" target="1.5" />
++    </bytecodeTargetLevel>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/TrainShedule1.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/TrainShedule1.iml	(date 1551087652011)
++++ .idea/TrainShedule1.iml	(date 1551087652011)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
++    <output url="file://$MODULE_DIR$/target/classes" />
++    <output-test url="file://$MODULE_DIR$/target/test-classes" />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
++      <excludeFolder url="file://$MODULE_DIR$/target" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
++    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
++    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.3" level="project" />
++    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.0.0" level="project" />
++    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.0.0" level="project" />
++    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.0.3" level="project" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/libraries/Maven__junit_junit_4_12.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Maven__junit_junit_4_12.xml	(date 1551087652080)
++++ .idea/libraries/Maven__junit_junit_4_12.xml	(date 1551087652080)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: junit:junit:4.12">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml	(date 1551087652100)
++++ .idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml	(date 1551087652100)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.apiguardian:apiguardian-api:1.0.0">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml	(date 1551087652117)
++++ .idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml	(date 1551087652117)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.hamcrest:hamcrest-core:1.3">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_0_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_0_3.xml	(date 1551087652134)
++++ .idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_0_3.xml	(date 1551087652134)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.3">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.0.3/junit-jupiter-api-5.0.3.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.0.3/junit-jupiter-api-5.0.3-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.0.3/junit-jupiter-api-5.0.3-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_0_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_0_3.xml	(date 1551087652151)
++++ .idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_0_3.xml	(date 1551087652151)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.junit.platform:junit-platform-commons:1.0.3">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.0.3/junit-platform-commons-1.0.3.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.0.3/junit-platform-commons-1.0.3-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.0.3/junit-platform-commons-1.0.3-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_opentest4j_opentest4j_1_0_0.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Maven__org_opentest4j_opentest4j_1_0_0.xml	(date 1551087652176)
++++ .idea/libraries/Maven__org_opentest4j_opentest4j_1_0_0.xml	(date 1551087652176)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.opentest4j:opentest4j:1.0.0">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(date 1551087652037)
++++ .idea/misc.xml	(date 1551087652037)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="JavaScriptSettings">
++    <option name="languageLevel" value="ES6" />
++  </component>
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK" />
++</project>
+\ No newline at end of file
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/Main.java	(date 1551019615363)
++++ src/main/java/Main.java	(date 1551019615363)
+@@ -0,0 +1,29 @@
++import java.text.DateFormat;
++import java.text.SimpleDateFormat;
++import java.util.Date;
++
++public class Main {
++    public static void main(String[] args) {
++        TrainShedule trainShedule = new TrainShedule("Челябинск");
++        trainShedule.addTrain(new Train("голубой вагон", "13:10", "Сочи"));
++        trainShedule.addTrain(new Train("поезд", "15:00", "Сочи"));
++        trainShedule.addTrain(new Train("сапсан-1", "22:00", "Сочи"));
++        trainShedule.addTrain(new Train("сапсан-2", "00:20", "Москва"));
++        trainShedule.addTrain(new Train("миг", "20:30", "Москва"));
++        trainShedule.addTrain(new Train("ржд-1", "18:40", "Москва"));
++        trainShedule.addTrain(new Train("тополь-м", "16:00", "Лененград"));
++        trainShedule.addTrain(new Train("грузоперевозки", "14:00", "Грозный"));
++        trainShedule.addTrain(new Train("грузоперевозки", "10:00", "Грозный"));
++        trainShedule.addTrain(new Train("грузоперевозки", "06:30", "Лондон"));
++        System.out.println(trainShedule.toString());
++
++        Train testTrain = trainShedule.getTrain("сапсан-1");
++        testTrain.addMidStation("Самара");
++        testTrain.addMidStation("Анапа");
++        testTrain.addMidStation("Краснодар");
++        testTrain.addMidStation("Туапсе");
++System.out.println(testTrain.midStations.toString());
++System.out.println(trainShedule.findNearestTrain("Москва"));
++
++    }
++}
+Index: src/main/java/Train.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/Train.java	(date 1551010498361)
++++ src/main/java/Train.java	(date 1551010498361)
+@@ -0,0 +1,38 @@
++import java.util.ArrayList;
++import java.util.List;
++
++public class Train {
++    String name;
++    String departureTime;
++    String endStation;
++    List<String> midStations;
++    Train(String name, String departureTime, String endStation){
++        this.name = name;
++        this.departureTime = departureTime;
++        this.endStation = endStation;
++        this.midStations = new ArrayList<String>();
++        this.midStations.add(midStations.size(), endStation);
++    }
++    void setDepartureStation(String name){
++        this.midStations.add(0, name);
++    }
++//midStation - промежуточная станция
++    public void addMidStation(String midName) {
++        midStations.add(midStations.size() - 1, midName);
++    }
++
++    public void deleteMidStation(String midName) {
++        midStations.remove(midName);
++    }
++
++    @Override
++    public String toString() {
++        return "[ " + name + ", " + departureTime + ", " + endStation + " ]";
++    }
++
++
++    public boolean equals(Train t) {
++        return this.name.equals(t.name) && this.departureTime.equals(t.departureTime)
++                && this.endStation.equals(t.endStation);
++    }
++}
+Index: src/main/java/TrainShedule.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/TrainShedule.java	(date 1551010498357)
++++ src/main/java/TrainShedule.java	(date 1551010498357)
+@@ -0,0 +1,90 @@
++import java.text.DateFormat;
++import java.text.ParseException;
++import java.text.SimpleDateFormat;
++import java.util.ArrayList;
++import java.util.Date;
++import java.util.List;
++import java.util.Locale;
++
++public class TrainShedule {
++private String departureStation;
++    TrainShedule(String departureStation){
++        this.departureStation = departureStation;
++    }
++    @Override
++    public String toString() {
++        StringBuilder output = new StringBuilder();
++        for (Train train : trainsList) {
++            output.append(train.toString()).append('\n');
++        }
++        return output.toString().substring(0, output.toString().lastIndexOf("\n"));
++    }
++
++    @Override
++    public boolean equals(Object obj) {
++        return super.equals(obj);
++    }
++
++    @Override
++    public int hashCode() {
++        return super.hashCode();
++    }
++
++    List<Train> trainsList = new ArrayList<Train>();
++
++    public void addTrain(Train train) {
++        train.setDepartureStation(departureStation);
++        trainsList.add(train);
++    }
++
++    public void deleteTrain(String name) {
++        Train train = getTrain(name);
++        for (int i = 0; i < trainsList.size(); i++) {
++            if (trainsList.get(i).equals(train)) {
++                trainsList.remove(i);
++            }
++        }
++
++    }
++
++
++    public Train getTrain(int index) {
++        return trainsList.get(index);
++    }
++    public Train getTrain(String name){
++        Train nullTrain = new Train("","","");
++        for (int i = 0; i < trainsList.size(); i++){
++            if (name.equals(trainsList.get(i).name)){
++                return trainsList.get(i);
++            }
++        }
++        return nullTrain;
++    }
++
++    public List getMidStationsOf(Train train) {
++        return train.midStations;
++    }
++
++    public String findNearestTrain(String endStation) {
++        Date date = new Date();
++        DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
++        try {
++            Date remDate = dateFormat.parse(getTrain(0).departureTime);
++            Train remTrain = getTrain(0);
++            for (Train train : trainsList) {
++                //  if (train.departureTime <= realDate.toString())
++                Date d = dateFormat.parse(train.departureTime);
++                if (d.before(date) && d.after(remDate) && train.endStation.equals(endStation)){
++                    remDate = d;
++                    remTrain = train;
++                }
++
++            }
++            return remTrain.toString();
++
++        } catch (ParseException e) {
++            System.out.println(e.getMessage());
++        }
++        return "";
++    }
++}
+Index: src/test/java/TrainSheduleTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/TrainSheduleTest.java	(date 1551012157455)
++++ src/test/java/TrainSheduleTest.java	(date 1551012157455)
+@@ -0,0 +1,70 @@
++import org.junit.Test;
++
++import static org.junit.jupiter.api.Assertions.*;
++
++public class TrainSheduleTest {
++    private TrainShedule trainShedule = new TrainShedule("Челябинск");
++
++    void addAll() {
++        trainShedule.addTrain(new Train("голубой вагон", "13:10", "Сочи"));
++        trainShedule.addTrain(new Train("поезд", "15:00", "Сочи"));
++        trainShedule.addTrain(new Train("сапсан-1", "22:00", "Сочи"));
++        trainShedule.addTrain(new Train("сапсан-2", "00:20", "Москва"));
++        trainShedule.addTrain(new Train("миг", "20:30", "Москва"));
++        trainShedule.addTrain(new Train("ржд-1", "18:40", "Москва"));
++        trainShedule.addTrain(new Train("ржд-2", "16:00", "Лененград"));
++        trainShedule.addTrain(new Train("грузоперевозки-1", "00:00", "Грозный"));
++        trainShedule.addTrain(new Train("грузоперевозки-2", "12:00", "Грозный"));
++        trainShedule.addTrain(new Train("грузоперевозки-3", "06:30", "Лондон"));
++    }
++
++    @Test
++    public void addOrDeleteTrainTest() {
++        addAll();
++        assertEquals(
++                "[ голубой вагон, 13:10, Сочи ]\n" +
++                        "[ поезд, 15:00, Сочи ]\n" +
++                        "[ сапсан-1, 22:00, Сочи ]\n" +
++                        "[ сапсан-2, 00:20, Москва ]\n" +
++                        "[ миг, 20:30, Москва ]\n" +
++                        "[ ржд-1, 18:40, Москва ]\n" +
++                        "[ ржд-2, 16:00, Лененград ]\n" +
++                        "[ грузоперевозки-1, 00:00, Грозный ]\n" +
++                        "[ грузоперевозки-2, 12:00, Грозный ]\n" +
++                        "[ грузоперевозки-3, 06:30, Лондон ]", trainShedule.toString());
++        trainShedule.deleteTrain("миг");
++        trainShedule.deleteTrain("поезд");
++        assertEquals(
++                "[ голубой вагон, 13:10, Сочи ]\n" +
++                        "[ сапсан-1, 22:00, Сочи ]\n" +
++                        "[ сапсан-2, 00:20, Москва ]\n" +
++                        "[ ржд-1, 18:40, Москва ]\n" +
++                        "[ ржд-2, 16:00, Лененград ]\n" +
++                        "[ грузоперевозки-1, 00:00, Грозный ]\n" +
++                        "[ грузоперевозки-2, 12:00, Грозный ]\n" +
++                        "[ грузоперевозки-3, 06:30, Лондон ]", trainShedule.toString());
++    }
++
++    @Test
++    public void addOrDeleteMidStationTest() {
++        addAll();
++        Train testTrain = trainShedule.getTrain("сапсан-1");
++        testTrain.addMidStation("Самара");
++        testTrain.addMidStation("Анапа");
++        testTrain.addMidStation("Краснодар");
++        testTrain.addMidStation("Туапсе");
++        assertEquals("[Челябинск, Самара, Анапа, Краснодар, Туапсе, Сочи]", testTrain.midStations.toString());
++        testTrain.deleteMidStation("Самара");
++        assertEquals("[Челябинск, Анапа, Краснодар, Туапсе, Сочи]", testTrain.midStations.toString());
++    }
++
++    @Test
++    public void findNearestTrainTest() {
++        addAll();
++        String nearestTrain = trainShedule.findNearestTrain("Москва");
++        assertEquals("[ миг, 20:30, Москва ]", nearestTrain);
++        System.out.println(nearestTrain);
++    }
++
++
++}
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1551088803258)
++++ .idea/vcs.xml	(date 1551088803258)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
