@@ -61,9 +61,14 @@ public class TrainSheduleTest {
     @Test
     public void findNearestTrainTest() {
         addAll();
-        String nearestTrain = trainShedule.findNearestTrain("Москва");
-        assertEquals("[ миг, 20:30, Москва ]", nearestTrain);
-        System.out.println(nearestTrain);
+        String date = "18:00";
+        String nearestTrain1 = trainShedule.findNearestTrain("Москва", date);
+
+        assertEquals("[ ржд-1, 18:40, Москва ]", nearestTrain1);
+        System.out.println(nearestTrain1);
+        String nearesttrain2 = trainShedule.findNearestTrain("Сочи", "14:26");
+        assertEquals("[ поезд, 15:00, Сочи ]", nearesttrain2);
+        System.out.println(nearesttrain2);
     }
 
 

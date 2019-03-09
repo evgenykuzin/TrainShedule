@@ -7,10 +7,12 @@ import java.util.List;
 import java.util.Locale;
 
 public class TrainShedule {
-private String departureStation;
-    TrainShedule(String departureStation){
+    private String departureStation;
+
+    TrainShedule(String departureStation) {
         this.departureStation = departureStation;
     }
+
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();
@@ -30,14 +32,14 @@ private String departureStation;
         return super.hashCode();
     }
 
-    List<Train> trainsList = new ArrayList<Train>();
+    private List<Train> trainsList = new ArrayList<Train>();
 
-    public void addTrain(Train train) {
+    void addTrain(Train train) {
         train.setDepartureStation(departureStation);
         trainsList.add(train);
     }
 
-    public void deleteTrain(String name) {
+    void deleteTrain(String name) {
         Train train = getTrain(name);
         for (int i = 0; i < trainsList.size(); i++) {
             if (trainsList.get(i).equals(train)) {
@@ -48,39 +50,60 @@ private String departureStation;
     }
 
 
-    public Train getTrain(int index) {
+    Train getTrain(int index) {
         return trainsList.get(index);
     }
-    public Train getTrain(String name){
-        Train nullTrain = new Train("","","");
-        for (int i = 0; i < trainsList.size(); i++){
-            if (name.equals(trainsList.get(i).name)){
+
+    Train getTrain(String name) {
+        Train nullTrain = new Train("", "", "");
+        for (int i = 0; i < trainsList.size(); i++) {
+            if (name.equals(trainsList.get(i).name)) {
                 return trainsList.get(i);
             }
         }
         return nullTrain;
     }
 
+    ArrayList<Train> getTrains(String endStation) {
+
+        ArrayList<Train> sortList = new ArrayList<Train>();
+        for (Train train : trainsList) {
+            if (train.endStation.equals(endStation)) {
+                sortList.add(train);
+            }
+        }
+        if (sortList.isEmpty()) {
+            throw new IllegalArgumentException("нет такой станции");
+        }
+        return sortList;
+    }
+
     public List getMidStationsOf(Train train) {
         return train.midStations;
     }
 
-    public String findNearestTrain(String endStation) {
-        Date date = new Date();
+    String findNearestTrain(String endStation, String date) {
+        ArrayList<Train> sortedTrains = getTrains(endStation);
         DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
+
         try {
-            Date remDate = dateFormat.parse(getTrain(0).departureTime);
-            Train remTrain = getTrain(0);
-            for (Train train : trainsList) {
-                //  if (train.departureTime <= realDate.toString())
+            Date realDate = (Date) dateFormat.parse(date);
+            Train remTrain = new Train(sortedTrains.get(0));
+            Date remDate = (Date) dateFormat.parse(remTrain.departureTime);
+
+            for (int i = 0; i < sortedTrains.size(); i++) {
+                Train train = new Train(sortedTrains.get(i));
                 Date d = dateFormat.parse(train.departureTime);
-                if (d.before(date) && d.after(remDate) && train.endStation.equals(endStation)){
-                    remDate = d;
-                    remTrain = train;
+                if (d.before(realDate) && d.after(remDate)) {
+                    remDate.setTime(d.getTime());
+                    System.out.println(remTrain.toString());
+                    remTrain = new Train(train);
+                    System.out.println(remTrain.toString());
                 }
 
             }
             return remTrain.toString();
+
 
         } catch (ParseException e) {
             System.out.println(e.getMessage());

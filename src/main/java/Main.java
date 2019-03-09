@@ -22,8 +22,7 @@ public class Main {
         testTrain.addMidStation("Анапа");
         testTrain.addMidStation("Краснодар");
         testTrain.addMidStation("Туапсе");
-System.out.println(testTrain.midStations.toString());
-System.out.println(trainShedule.findNearestTrain("Москва"));
-
+        System.out.println(testTrain.midStations.toString());
+        trainShedule.findNearestTrain("Москва", "18:40");
     }
 }
