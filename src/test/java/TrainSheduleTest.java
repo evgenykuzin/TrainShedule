@@ -45,8 +45,8 @@ public class TrainSheduleTest {
                         "[ грузоперевозки-3, 06:30, Лондон ]", trainShedule.toString());
         try {
             trainShedule.deleteTrain("миг");
-        } catch (Exception e) {
-            assertEquals("Такого поезда не существует!", e.getMessage());
+        } catch (IllegalArgumentException iae) {
+            assertEquals("Не удалось удалить поезд. Такого поезда не существует!", iae.getMessage());
         }
         try {
             trainShedule.addTrain(new Train("голубой вагон", "13:10", "Сочи"));
@@ -65,9 +65,9 @@ public class TrainSheduleTest {
         testTrain.addMidStation("Анапа");
         testTrain.addMidStation("Краснодар");
         testTrain.addMidStation("Туапсе");
-        assertEquals("[Челябинск, Самара, Анапа, Краснодар, Туапсе, Сочи]", testTrain.midStations.toString());
+        assertEquals("[Челябинск, Самара, Анапа, Краснодар, Туапсе, Сочи]", testTrain.getMidStations().toString());
         testTrain.deleteMidStation("Самара");
-        assertEquals("[Челябинск, Анапа, Краснодар, Туапсе, Сочи]", testTrain.midStations.toString());
+        assertEquals("[Челябинск, Анапа, Краснодар, Туапсе, Сочи]", testTrain.getMidStations().toString());
         try {
             testTrain.addMidStation("Самара");
         } catch (Exception e) {
@@ -88,10 +88,11 @@ public class TrainSheduleTest {
         System.out.println(nearestTrain);
         try {
             trainShedule.findNearestTrain("10101010");
-        } catch (Exception e) {
+        } catch (IllegalArgumentException iae) {
             assertEquals(
-                    "Не удалось найтти ближайший поезд к данной станции. " +
-                            "Такой станции не существует!", e.getMessage());
+                    "Не удалось найти ближайший поезд к данной станции. " +
+                            "Такой станции не существует!", iae.getMessage());
+
         }
     }
 

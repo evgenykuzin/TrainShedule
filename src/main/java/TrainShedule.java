@@ -24,15 +24,17 @@ public class TrainShedule {
     }
 
     public void deleteTrain(String name) {
-        if (trainsList.contains(getTrain(name)))
-            throw new IllegalArgumentException("Не удалось удалить поезд. Такого поезда не существует!");
-        Train train = getTrain(name);
-        for (int i = 0; i < trainsList.size(); i++) {
-            if (trainsList.get(i).equals(train)) {
-                trainsList.remove(i);
+        try {
+            Train train = getTrain(name);
+            for (int i = 0; i < trainsList.size(); i++) {
+                if (trainsList.get(i).equals(train)) {
+                    trainsList.remove(i);
+                }
             }
         }
-
+        catch (IllegalArgumentException iae){
+            throw new IllegalArgumentException("Не удалось удалить поезд. Такого поезда не существует!");
+        }
     }
 
 
@@ -48,7 +50,7 @@ public class TrainShedule {
         try {
             Train t = new Train();
             for (int i = 0; i < trainsList.size(); i++) {
-                if (name.equals(trainsList.get(i).name)) {
+                if (name == trainsList.get(i).getName()) {
                     t = trainsList.get(i);
                 }
             }
@@ -62,23 +64,22 @@ public class TrainShedule {
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
         try {
-            Date remDate = dateFormat.parse(getTrain(0).departureTime);
+            Date remDate = dateFormat.parse(getTrain(0).getGetDepartureTime());
             Train remTrain = getTrain(0);
             for (Train train : trainsList) {
-                Date d = dateFormat.parse(train.departureTime);
-                if (train.endStation.equals(endStation)) {
+                Date d = dateFormat.parse(train.getGetDepartureTime());
+                if (train.getEndStation().equals(endStation)) {
                     if (d.before(date) && d.after(remDate)) {
                         remDate = d;
                         remTrain = train;
                     }
-                } else throw new IllegalArgumentException(
-                        "Не удалось найтти ближайший поезд к данной станции. Такой станции не существует!");
-
+                }
             }
             return remTrain.toString();
 
-        } catch (ParseException e) {
-            throw new IllegalArgumentException(e.getMessage());
+        } catch (Exception e) {
+            throw new IllegalArgumentException
+                    ("Не удалось найти ближайший поезд к данной станции. Такой станции не существует!");
         }
     }
 

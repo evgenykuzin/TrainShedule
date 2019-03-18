@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Train {
-    String name;
-    String departureTime;
-    String endStation;
-    List<String> midStations;
+    private String name;
+    private String getDepartureTime;
+    private String endStation;
+    private List<String> midStations;
 
     Train(){ }
     Train(String name, String departureTime, String endStation) {
         this.name = name;
-        this.departureTime = departureTime;
+        this.getDepartureTime = departureTime;
         this.endStation = endStation;
         this.midStations = new ArrayList<String>();
         this.midStations.add(midStations.size(), endStation);
@@ -33,9 +33,25 @@ public class Train {
         midStations.remove(midName);
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String getGetDepartureTime(){
+        return this.getDepartureTime;
+    }
+
+    public String getEndStation(){
+        return this.endStation;
+    }
+
+    public List getMidStations(){
+        return this.midStations;
+    }
+
     @Override
     public String toString() {
-        return "[ " + name + ", " + departureTime + ", " + endStation + " ]";
+        return "[ " + name + ", " + getDepartureTime + ", " + endStation + " ]";
     }
 
     @Override
@@ -44,7 +60,7 @@ public class Train {
         if (t == null) return false;
         if (t != this && t.getClass() != this.getClass()) return false;
 
-        return this.name.equals(t.name) && this.departureTime.equals(t.departureTime)
+        return this.name.equals(t.name) && this.getDepartureTime.equals(t.getDepartureTime)
                 && this.endStation.equals(t.endStation) && this.midStations.equals(t.midStations);
     }
 
@@ -53,6 +69,6 @@ public class Train {
         return 64 * (this.midStations.hashCode() +
                 this.name.hashCode() -
                 this.name.hashCode() /
-                        this.departureTime.hashCode());
+                        this.getDepartureTime.hashCode());
     }
 }
