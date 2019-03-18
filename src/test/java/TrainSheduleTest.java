@@ -43,6 +43,18 @@ public class TrainSheduleTest {
                         "[ грузоперевозки-1, 00:00, Грозный ]\n" +
                         "[ грузоперевозки-2, 12:00, Грозный ]\n" +
                         "[ грузоперевозки-3, 06:30, Лондон ]", trainShedule.toString());
+        try {
+            trainShedule.deleteTrain("миг");
+        } catch (Exception e) {
+            assertEquals("Такого поезда не существует!", e.getMessage());
+        }
+        try {
+            trainShedule.addTrain(new Train("голубой вагон", "13:10", "Сочи"));
+        } catch (Exception e) {
+            assertEquals("Не удалось добавить поезд. Такой поезд уже существует!", e.getMessage());
+        }
+
+
     }
 
     @Test
@@ -56,6 +68,16 @@ public class TrainSheduleTest {
         assertEquals("[Челябинск, Самара, Анапа, Краснодар, Туапсе, Сочи]", testTrain.midStations.toString());
         testTrain.deleteMidStation("Самара");
         assertEquals("[Челябинск, Анапа, Краснодар, Туапсе, Сочи]", testTrain.midStations.toString());
+        try {
+            testTrain.addMidStation("Самара");
+        } catch (Exception e) {
+            assertEquals("Не удалось добавить станцию. Такая станция уже существует!", e.getMessage());
+        }
+        try {
+            testTrain.deleteMidStation("110101010");
+        } catch (Exception e) {
+            assertEquals("Не удалось удалить станицю. Такой станции не существует!", e.getMessage());
+        }
     }
 
     @Test
@@ -64,6 +86,13 @@ public class TrainSheduleTest {
         String nearestTrain = trainShedule.findNearestTrain("Москва");
         assertEquals("[ миг, 20:30, Москва ]", nearestTrain);
         System.out.println(nearestTrain);
+        try {
+            trainShedule.findNearestTrain("10101010");
+        } catch (Exception e) {
+            assertEquals(
+                    "Не удалось найтти ближайший поезд к данной станции. " +
+                            "Такой станции не существует!", e.getMessage());
+        }
     }
 
 
