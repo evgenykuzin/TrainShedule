@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -5,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TrainSheduleTest {
     private TrainShedule trainShedule = new TrainShedule("Челябинск");
 
-    void addAll() {
+    @Before
+    public void addAll() {
         trainShedule.addTrain(new Train("голубой вагон", "13:10", "Сочи"));
         trainShedule.addTrain(new Train("поезд", "15:00", "Сочи"));
         trainShedule.addTrain(new Train("сапсан-1", "22:00", "Сочи"));
@@ -20,7 +22,7 @@ public class TrainSheduleTest {
 
     @Test
     public void addOrDeleteTrainTest() {
-        addAll();
+        System.out.println(trainShedule.toString());
         assertEquals(
                 "[ голубой вагон, 13:10, Сочи ]\n" +
                         "[ поезд, 15:00, Сочи ]\n" +
@@ -31,7 +33,7 @@ public class TrainSheduleTest {
                         "[ ржд-2, 16:00, Лененград ]\n" +
                         "[ грузоперевозки-1, 00:00, Грозный ]\n" +
                         "[ грузоперевозки-2, 12:00, Грозный ]\n" +
-                        "[ грузоперевозки-3, 06:30, Лондон ]", trainShedule.toString());
+                        "[ грузоперевозки-3, 06:30, Лондон ]\n", trainShedule.toString());
         trainShedule.deleteTrain("миг");
         trainShedule.deleteTrain("поезд");
         assertEquals(
@@ -42,7 +44,7 @@ public class TrainSheduleTest {
                         "[ ржд-2, 16:00, Лененград ]\n" +
                         "[ грузоперевозки-1, 00:00, Грозный ]\n" +
                         "[ грузоперевозки-2, 12:00, Грозный ]\n" +
-                        "[ грузоперевозки-3, 06:30, Лондон ]", trainShedule.toString());
+                        "[ грузоперевозки-3, 06:30, Лондон ]\n", trainShedule.toString());
         try {
             trainShedule.deleteTrain("миг");
         } catch (IllegalArgumentException iae) {
@@ -59,7 +61,6 @@ public class TrainSheduleTest {
 
     @Test
     public void addOrDeleteMidStationTest() {
-        addAll();
         Train testTrain = trainShedule.getTrain("сапсан-1");
         testTrain.addMidStation("Самара");
         testTrain.addMidStation("Анапа");
@@ -82,7 +83,6 @@ public class TrainSheduleTest {
 
     @Test
     public void findNearestTrainTest() {
-        addAll();
         String nearestTrain = trainShedule.findNearestTrain("Москва");
         assertEquals("[ миг, 20:30, Москва ]", nearestTrain);
         System.out.println(nearestTrain);

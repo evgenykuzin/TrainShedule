@@ -1,60 +1,37 @@
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TrainShedule {
     private String departureStation;
-    private List<Train> trainsList;
-
+    private Map<String, Train> trainsMap;
     TrainShedule(String departureStation) {
         this.departureStation = departureStation;
-        trainsList = new ArrayList<Train>();
+        trainsMap = new LinkedHashMap<>();
     }
 
 
     public void addTrain(Train train) {
-        if (trainsList.contains(train))
+        if (trainsMap.containsKey(train.getName()))
             throw new IllegalArgumentException("Не удалось добавить поезд. Такой поезд уже существует!");
         train.setDepartureStation(departureStation);
-        trainsList.add(train);
+        trainsMap.put(train.getName(), train);
     }
 
     public void deleteTrain(String name) {
         try {
-            Train train = getTrain(name);
-            for (int i = 0; i < trainsList.size(); i++) {
-                if (trainsList.get(i).equals(train)) {
-                    trainsList.remove(i);
-                }
-            }
+            trainsMap.remove(name);
         }
         catch (IllegalArgumentException iae){
             throw new IllegalArgumentException("Не удалось удалить поезд. Такого поезда не существует!");
         }
     }
 
-
-    public Train getTrain(int index) {
-        try {
-            return trainsList.get(index);
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Такого поезда не существует!");
-        }
-    }
-
     public Train getTrain(String name) {
         try {
-            Train t = new Train();
-            for (int i = 0; i < trainsList.size(); i++) {
-                if (name == trainsList.get(i).getName()) {
-                    t = trainsList.get(i);
-                }
-            }
-            return t;
+            return trainsMap.get(name);
         } catch (Exception e) {
             throw new IllegalArgumentException("Такого поезда не существует!");
         }
@@ -64,10 +41,13 @@ public class TrainShedule {
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
         try {
-            Date remDate = dateFormat.parse(getTrain(0).getGetDepartureTime());
-            Train remTrain = getTrain(0);
-            for (Train train : trainsList) {
-                Date d = dateFormat.parse(train.getGetDepartureTime());
+            Map.Entry<String,Train> entry = trainsMap.entrySet().iterator().next();
+            String key= entry.getKey();
+            Train remTrain = getTrain(key);
+            Date remDate = dateFormat.parse(remTrain.getDepartureTime());
+
+            for (Train train : trainsMap.values()) {
+                Date d = dateFormat.parse(train.getDepartureTime());
                 if (train.getEndStation().equals(endStation)) {
                     if (d.before(date) && d.after(remDate)) {
                         remDate = d;
@@ -85,11 +65,8 @@ public class TrainShedule {
 
     @Override
     public String toString() {
-        StringBuilder output = new StringBuilder();
-        for (Train train : trainsList) {
-            output.append(train.toString()).append('\n');
-        }
-        return output.toString().substring(0, output.toString().lastIndexOf("\n"));
+        Stream<Train> stream = trainsMap.values().stream();
+        return stream.map(train -> train.toString() + "\n").collect(Collectors.joining());
     }
 
 
@@ -99,12 +76,12 @@ public class TrainShedule {
         if (!obj.equals(this)) return false;
         if (obj.getClass() != this.getClass()) return false;
         TrainShedule t = (TrainShedule) obj;
-        return t.trainsList == this.trainsList && t.departureStation.equals(this.departureStation);
+        return t.trainsMap == this.trainsMap && t.departureStation.equals(this.departureStation);
     }
 
     @Override
     public int hashCode() {
-        return 32 * (this.trainsList.hashCode() + this.departureStation.hashCode());
+        return 32 * (this.trainsMap.hashCode() + this.departureStation.hashCode());
     }
 
 }

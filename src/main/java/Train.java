@@ -7,7 +7,6 @@ public class Train {
     private String endStation;
     private List<String> midStations;
 
-    Train(){ }
     Train(String name, String departureTime, String endStation) {
         this.name = name;
         this.getDepartureTime = departureTime;
@@ -37,7 +36,7 @@ public class Train {
         return this.name;
     }
 
-    public String getGetDepartureTime(){
+    public String getDepartureTime(){
         return this.getDepartureTime;
     }
 
