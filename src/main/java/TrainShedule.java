@@ -21,20 +21,15 @@ public class TrainShedule {
     }
 
     public void deleteTrain(String name) {
-        try {
-            trainsMap.remove(name);
-        }
-        catch (IllegalArgumentException iae){
+        if (!trainsMap.containsKey(name))
             throw new IllegalArgumentException("Не удалось удалить поезд. Такого поезда не существует!");
-        }
+        trainsMap.remove(name);
     }
 
     public Train getTrain(String name) {
-        try {
-            return trainsMap.get(name);
-        } catch (Exception e) {
+        if (!trainsMap.containsKey(name))
             throw new IllegalArgumentException("Такого поезда не существует!");
-        }
+        return trainsMap.get(name);
     }
 
     public String findNearestTrain(String endStation) {

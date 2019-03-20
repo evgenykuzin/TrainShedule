@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Executable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TrainSheduleTest {
@@ -45,18 +47,11 @@ public class TrainSheduleTest {
                         "[ грузоперевозки-1, 00:00, Грозный ]\n" +
                         "[ грузоперевозки-2, 12:00, Грозный ]\n" +
                         "[ грузоперевозки-3, 06:30, Лондон ]\n", trainShedule.toString());
-        try {
-            trainShedule.deleteTrain("миг");
-        } catch (IllegalArgumentException iae) {
-            assertEquals("Не удалось удалить поезд. Такого поезда не существует!", iae.getMessage());
-        }
-        try {
-            trainShedule.addTrain(new Train("голубой вагон", "13:10", "Сочи"));
-        } catch (Exception e) {
-            assertEquals("Не удалось добавить поезд. Такой поезд уже существует!", e.getMessage());
-        }
 
-
+        assertThrows(IllegalArgumentException.class, () ->
+                trainShedule.deleteTrain("миг"));
+        assertThrows(IllegalArgumentException.class, () ->
+                trainShedule.addTrain(new Train("голубой вагон", "13:10", "Сочи")));
     }
 
     @Test

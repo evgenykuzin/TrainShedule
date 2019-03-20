@@ -55,10 +55,10 @@ public class Train {
 
     @Override
     public boolean equals(Object obj) {
-        Train t = (Train) obj;
-        if (t == null) return false;
-        if (t != this && t.getClass() != this.getClass()) return false;
 
+        if (obj == null) return false;
+        if (obj != this && obj.getClass() != this.getClass()) return false;
+        Train t = (Train) obj;
         return this.name.equals(t.name) && this.getDepartureTime.equals(t.getDepartureTime)
                 && this.endStation.equals(t.endStation) && this.midStations.equals(t.midStations);
     }
